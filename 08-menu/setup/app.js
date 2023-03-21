@@ -1,3 +1,10 @@
+const btns = document.querySelectorAll(".filter-btn");
+
+
+
+
+
+
 const menu = [
   {
     id: 1,
@@ -72,9 +79,38 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+// filtriranje
+// btns.forEach(function(btn){
+//   btn.addEventListener('click', function(e){
+//     const category = e.currentTarget.dataset.id;
+//     console.log(category);
+//     const menuCategory = menu.filter(function(menuItem){
+//       if(menuItem.category === category){
+//   return menuItem;
+//       }
+
+//     })
+
+//     })
+//   })
+
+
+
+
+
+
+
+
+
+
 const sectionCenter = document.querySelector('.section-center');
 window.addEventListener('DOMContentLoaded', function(){
-  let displayMenu = menu.map(function(item){
+  displayMenuItems(menu)
+}
+);
+
+function displayMenuItems(menuItem){
+  let displayMenu = menuItem.map(function(item){
     return `<article class="menu-item">
     <img src="${item.img}" class="photo" alt="${item.title}">
     <div class="item-info">
@@ -90,6 +126,4 @@ ${item.desc}
   })
   displayMenu = displayMenu.join('');
   sectionCenter.innerHTML = displayMenu;
-  console.log(displayMenu);
 }
-);
